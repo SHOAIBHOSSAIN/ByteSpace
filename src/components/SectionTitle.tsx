@@ -1,20 +1,22 @@
-type SectionTitleProps = {
-	title: string;
-	subtitle: string;
-	className?: string;
-};
+import React from "react";
 
-const SectionTitle = ({ title, subtitle, className = "" }: SectionTitleProps) => {
-	return (
-		<header className={`mx-auto w-full text-center ${className}`}>
-			<h2 className="mx-auto mb-4 max-w-[620px] text-[32px] font-bold leading-[1.15] text-[#080d1d] sm:text-[42px]">
-				{title}
-			</h2>
-			<p className="mx-auto max-w-[920px] text-sm leading-[1.65] text-[#9095a0] sm:text-base">
-				{subtitle}
-			</p>
-		</header>
-	);
+interface SectionTitleProps {
+  title: string;
+  subtitle: string;
+  className?: string;
+}
+
+const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle, className = "" }) => {
+  return (
+    <div className={`text-center ${className}`}>
+      <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-[#171923] sm:text-4xl">
+        {title}
+      </h2>
+      <p className="mx-auto max-w-3xl text-sm text-gray-500 sm:text-base">
+        {subtitle}
+      </p>
+    </div>
+  );
 };
 
 export default SectionTitle;

@@ -1,5 +1,3 @@
-import type { IconType } from "react-icons";
-
 export interface Course{
   id:number;
   title:string;
@@ -21,5 +19,5 @@ export interface Testimonial{
 export interface Category{
   id:number;
   title:string;
-  icon:IconType;
+  image:string;
 }

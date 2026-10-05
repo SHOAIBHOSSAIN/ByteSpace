@@ -38,7 +38,7 @@ const CourseCard = ({
 
 	return (
 		<article className="w-full rounded-24px border border-[#d2d4d8] bg-white p-4 text-[#171923] shadow-sm sm:rounded-[30px] sm:p-6">
-			<div className="relative aspect-[1.75] overflow-hidden rounded-[18px] bg-[#eef0f3] sm:rounded-[22px]">
+			<a href={`/courses/${course.id}`} aria-label={`View ${course.title} course details`} className="relative block aspect-[1.75] overflow-hidden rounded-[18px] bg-[#eef0f3] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#003be2] sm:rounded-[22px]">
 				<img
 					src={imageSrc}
 					alt={`${course.title} course preview`}
@@ -56,12 +56,14 @@ const CourseCard = ({
 						{commentCount} Comments
 					</span>
 				</div>
-			</div>
+			</a>
 
 			<div className="mt-5 flex items-center justify-between gap-3 sm:mt-7">
-				<h2 className="min-w-0 truncate text-xl font-semibold leading-tight text-black sm:text-2xl">
-					{course.title}
-				</h2>
+					<h2 className="min-w-0 truncate text-xl font-semibold leading-tight text-black sm:text-2xl">
+						<a href={`/courses/${course.id}`} className="hover:text-[#003be2] focus-visible:outline-2 focus-visible:outline-[#003be2]">
+						{course.title}
+						</a>
+					</h2>
 				<div className="flex shrink-0 items-center gap-1 text-base text-[#55565b] sm:text-xl">
 					<span>{course.rating.toFixed(1)}</span>
 					<FiStar aria-hidden="true" className="fill-[#d0d1d4] text-[#d0d1d4]" />
@@ -91,7 +93,7 @@ const CourseCard = ({
 							{String.fromCharCode(74 + index)}
 						</span>
 					))}
-					<span className="-ml-1 flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-[#c8ff00] text-[10px] font-medium text-[#191b15] sm:h-66px sm:w-66px sm:text-xl">
+					<span className="-ml-1 flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-#c8ff00 text-[10px] font-medium text-[#191b15] sm:h-66px sm:w-66px sm:text-xl">
 						{studentCount}+
 					</span>
 				</div>

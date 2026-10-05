@@ -2,13 +2,15 @@ import Navbar from "../components/Navbar";
 import CourseCard from "../components/CourseCard";
 import SectionTitle from "../components/SectionTitle";
 import { courses } from "../data/courses";
-import CategorySection from "../components/CategorySection ";
+import CategorySection from "../components/CategorySection";
 import Hero from "../components/Hero";
 import PartnerLogos from "../components/PartnerLogos";
+import TabCategories from "../components/TabCategories";
+import Footer from "../components/Footer";
 
 const Home = () => {
 	return (
-		<main className="hero-grid relative isolate text-white">
+		<main className="hero-grid relative isolate text-white overflow-x-hidden">
 			<Navbar />
 			<Hero />
 			<PartnerLogos />
@@ -20,6 +22,7 @@ const Home = () => {
 						subtitle="At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life."
 						className="mb-8 sm:mb-10"
 					/>
+					  <TabCategories className="mb-10" />
 					<div className="grid grid-cols-1 items-start gap-6 xl:grid-cols-2">
 						{courses.map((course) => (
 							<CourseCard key={course.id} course={course} />
@@ -28,6 +31,7 @@ const Home = () => {
 				</div>
 			</section>
       <CategorySection />
+			<Footer />
 		</main>
 	);
 };

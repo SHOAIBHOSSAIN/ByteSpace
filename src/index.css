@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-persian-blue-800: #083fe5;
+  --font-poppins: "Poppins", sans-serif;
+  --font-satoshi: "Satoshi", sans-serif;
+  --color-persian-blue-800: #003BE2;
+  --color-shuttle-gray-50: #f5f6f7;
+  --color-shuttle-gray-100: #E5E6E8;
+  --color-shuttle-gray-200: #CED0D3;
+  --color-electric-lime-400: #D4FB20;
 }
 
 :root {
